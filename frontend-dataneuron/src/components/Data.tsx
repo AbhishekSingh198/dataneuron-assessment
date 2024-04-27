@@ -34,7 +34,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
     async function sendRequest() {
         try {
             const response = await axios.post(`${BACKEND_URL}/api/v1/${type}`, postInputs);
-            alert(`${response.data.id}` + "  Unique Id created for the data you added")
+            alert(`${response?.data.id}` + "  Unique Id created for the data you added")
         } catch(e) {
             alert("Error while Adding data")
             // alert the user here that the request failed
@@ -113,18 +113,18 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                     </div>
                 </div>
                 <div>
-                    <Card className="h-full w-full" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
-                        <CardHeader floated={false} shadow={false} className="rounded-none" placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                    <Card className="h-full w-full" placeholder={"undefined"}  onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
+                        <CardHeader floated={false} shadow={false} className="rounded-none" placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                             <div className="mb-8 flex items-center justify-between gap-8">
                                 <div>
-                                    <Typography variant="h5" color="blue-gray" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                                    <Typography variant="h5" color="blue-gray" placeholder={"undefined"}  onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                                         {type === "admin" ? "Admin " : (type === "customer" ? "Customer " : "Employee ")}Data
                                     </Typography>
                                     
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardBody className="overflow-scroll px-0" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                        <CardBody className="overflow-scroll px-0" placeholder={"undefined"}  onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                             <table className="mt-4 w-full min-w-max table-auto text-left">
                             <thead>
                                 <tr>
@@ -136,7 +136,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                                     <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal leading-none opacity-70" placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}                                    >
+                                            className="font-normal leading-none opacity-70" placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}                                    >
                                         {head}
                                     </Typography>
                                     </th>
@@ -152,15 +152,15 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                                     : "p-4 border-b border-blue-gray-50";
                     
                                     return (
-                                    <tr key={item.email}>
+                                    <tr key={item?.email}>
                                         <td className={classes}>
                                             <div className="flex items-center gap-3">
                                                 <div className="flex flex-col">
                                                     <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-normal" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}                                                    >
-                                                        {item.name}
+                                                            className="font-normal" placeholder={"undefined"}  onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}                                                    >
+                                                        {item?.name}
                                                     </Typography>
                                                 </div>
                                             </div>
@@ -171,8 +171,8 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                                                     <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-normal opacity-70" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}                                                    >
-                                                        {item.email}
+                                                            className="font-normal opacity-70" placeholder={"undefined"}  onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}                                                    >
+                                                        {item?.email}
                                                     </Typography>
                                                 </div>
                                             </div>
@@ -180,7 +180,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
     
                                         <td className={classes}>
                                             <Tooltip content="Edit User">
-                                                <IconButton variant="text"  placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                                                <IconButton variant="text"  placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                                                     <PencilIcon  onClick={() =>editRequest(item)} className="h-4 w-4" />
                                                 </IconButton>
                                             </Tooltip>
@@ -192,15 +192,15 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                             </tbody>
                             </table>
                         </CardBody>
-                        <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4"  placeholder={"undefined"} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="small" color="blue-gray" className="font-normal"  placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={undefined}>
+                        <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4"  placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
+                            <Typography variant="small" color="blue-gray" className="font-normal"  placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                             Page 1 of 10
                             </Typography>
                             <div className="flex gap-2">
-                            <Button variant="outlined" size="sm" placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                            <Button variant="outlined" size="sm" placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                                 Previous
                             </Button>
-                            <Button variant="outlined" size="sm"  placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                            <Button variant="outlined" size="sm"  placeholder={"undefined"} onPointerEnterCapture={() => { console.log('on pointer enter') }} onPointerLeaveCapture={() => { console.log('on pointer enter') }}>
                                 Next
                             </Button>
                             </div>
