@@ -1,17 +1,21 @@
 import './App.css'
 import { Data } from './components/Data'
 import SplitPane from 'react-split-pane';
-import { useState } from 'react';
+
+
+const _SplitPane: any = SplitPane;
 
 function App() {
-  return <SplitPane split="horizontal" minSize={50} maxSize={300} defaultSize={100}>
+  return <div className='rounded my-4 mx-4'>
+        <_SplitPane  split="horizontal" minSize={50} maxSize={300} defaultSize={100}>
     
-    <SplitPane split="vertical" minSize={50} maxSize={300} defaultSize={100}>
-        <Data type='admin'/>
-        <Data type='employee'/>
-    </SplitPane>
-    <Data type='customer'/>
-  </SplitPane>
+            <_SplitPane split="vertical" minSize={50} maxSize={300} defaultSize={50}>
+                <Data type='admin'/>
+                <Data type='employee'/>
+            </_SplitPane>
+            <Data type='customer'/>
+          </_SplitPane>
+    </div>
 }
 
 export default App
