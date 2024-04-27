@@ -84,7 +84,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
 
 
 
-    return <div className="h-screen flex justify-center flex-col overflow-auto rounded my-4 mx-4">
+    return <div className="flex justify-center flex-col overflow-auto rounded my-4 mx-4">
         <div className="flex justify-center pt-20">
             <div>
                 <div className="px-4">
