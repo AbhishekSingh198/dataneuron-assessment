@@ -2,12 +2,14 @@ import { Hono } from 'hono'
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
+//initialize employee router with hono
 export const employeeRouter = new Hono<{
     Bindings:{
         DATABASE_URL: string
     }
 }>();
 
+//middleware for count
 employeeRouter.use("/*" , async(c , next)=>{
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
@@ -36,6 +38,8 @@ employeeRouter.use("/*" , async(c , next)=>{
     }
 })
 
+
+//add data api
 employeeRouter.post('/' , async(c) =>{
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
@@ -56,6 +60,7 @@ employeeRouter.post('/' , async(c) =>{
 
 })
 
+//edit data api
 employeeRouter.put('/', async(c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
@@ -80,7 +85,7 @@ employeeRouter.put('/', async(c) => {
     })
 })
 
-
+//get all data api
 employeeRouter.get('/', async(c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,

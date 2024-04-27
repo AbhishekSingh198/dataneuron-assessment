@@ -2,14 +2,16 @@ import { Hono } from 'hono'
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
+// initialize the adminrouter which is used in index.ts , here using it to make call by isnitializing with Hono just like express
 export const adminRouter = new Hono<{
     Bindings:{
         DATABASE_URL: string
     }
 }>();
 
-
+//middleware for increasing the count of requests in DB
 adminRouter.use("/*" , async(c , next)=>{
+    //intialize the prisma client using DB url for prisma accellerate (ORM)
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
       }).$extends(withAccelerate());
@@ -37,6 +39,7 @@ adminRouter.use("/*" , async(c , next)=>{
     }
 })
 
+//post the data Add data
 adminRouter.post('/' , async(c) =>{
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
@@ -57,6 +60,8 @@ adminRouter.post('/' , async(c) =>{
 
 })
 
+
+//put request - edit request - using email 
 adminRouter.put('/', async(c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
@@ -81,7 +86,7 @@ adminRouter.put('/', async(c) => {
     })
 })
 
-
+//get all data endpoint
 adminRouter.get('/', async(c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,

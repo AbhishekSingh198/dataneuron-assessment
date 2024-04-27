@@ -2,12 +2,14 @@ import { Hono } from 'hono'
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
+//initialize count router with hono whuch also gives a generic type to DB url
 export const countRouter = new Hono<{
     Bindings:{
         DATABASE_URL: string
     }
 }>();
 
+//get count
 countRouter.get('/a' , async (c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
@@ -27,6 +29,8 @@ countRouter.get('/a' , async (c) => {
     }
 })
 
+
+//below are the endpoints for different components api request count
 countRouter.get('/c' , async (c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env?.DATABASE_URL,
