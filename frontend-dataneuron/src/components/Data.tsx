@@ -23,7 +23,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
     });
 
     const [makechange , setMakechange] = useState(false) ;
-    const {loadingData , data} = useData({type}) ;
+    const {data} = useData({type}) ;
     const TABLE_HEAD = ["Name", "Email", "Edit"];
     const [prevEmail, setPrevEmail] = useState<string>("");
     const [postInputs, setPostInputs] = useState({
