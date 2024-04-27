@@ -113,18 +113,18 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                     </div>
                 </div>
                 <div>
-                    <Card className="h-full w-full" placeholder={undefined}  onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader floated={false} shadow={false} className="rounded-none" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                    <Card className="h-full w-full" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
+                        <CardHeader floated={false} shadow={false} className="rounded-none" placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
                             <div className="mb-8 flex items-center justify-between gap-8">
                                 <div>
-                                    <Typography variant="h5" color="blue-gray" placeholder={undefined}  onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                    <Typography variant="h5" color="blue-gray" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
                                         {type === "admin" ? "Admin " : (type === "customer" ? "Customer " : "Employee ")}Data
                                     </Typography>
                                     
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardBody className="overflow-scroll px-0" placeholder={undefined}  onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <CardBody className="overflow-scroll px-0" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
                             <table className="mt-4 w-full min-w-max table-auto text-left">
                             <thead>
                                 <tr>
@@ -136,7 +136,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                                     <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="font-normal leading-none opacity-70" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                    >
+                                            className="font-normal leading-none opacity-70" placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}                                    >
                                         {head}
                                     </Typography>
                                     </th>
@@ -159,7 +159,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                                                     <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-normal" placeholder={undefined}  onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                                    >
+                                                            className="font-normal" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}                                                    >
                                                         {item.name}
                                                     </Typography>
                                                 </div>
@@ -171,7 +171,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                                                     <Typography
                                                             variant="small"
                                                             color="blue-gray"
-                                                            className="font-normal opacity-70" placeholder={undefined}  onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                                    >
+                                                            className="font-normal opacity-70" placeholder={"undefined"}  onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}                                                    >
                                                         {item.email}
                                                     </Typography>
                                                 </div>
@@ -180,7 +180,7 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
     
                                         <td className={classes}>
                                             <Tooltip content="Edit User">
-                                                <IconButton variant="text"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                                                <IconButton variant="text"  placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
                                                     <PencilIcon  onClick={() =>editRequest(item)} className="h-4 w-4" />
                                                 </IconButton>
                                             </Tooltip>
@@ -192,15 +192,15 @@ export const Data = ({type} : {type :"employee" | "admin" | "customer"}) => {
                             </tbody>
                             </table>
                         </CardBody>
-                        <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="small" color="blue-gray" className="font-normal"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                        <CardFooter className="flex items-center justify-between border-t border-blue-gray-50 p-4"  placeholder={"undefined"} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            <Typography variant="small" color="blue-gray" className="font-normal"  placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={undefined}>
                             Page 1 of 10
                             </Typography>
                             <div className="flex gap-2">
-                            <Button variant="outlined" size="sm" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            <Button variant="outlined" size="sm" placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
                                 Previous
                             </Button>
-                            <Button variant="outlined" size="sm"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            <Button variant="outlined" size="sm"  placeholder={"undefined"} onPointerEnterCapture={"undefined"} onPointerLeaveCapture={"undefined"}>
                                 Next
                             </Button>
                             </div>
